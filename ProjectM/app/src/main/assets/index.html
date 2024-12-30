@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Ring Try-On</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="videoView">
+    <div class="header">
+        <div class="logo">Mahavir</div>
+    </div>
+
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="output_canvas"></canvas>
+
+    <div class="overlay-text">
+        <p>SHOW YOUR HAND</p>
+        <p>To achieve the best results when virtually trying on, keep a 10-inch distance, and ensure clear visibility!</p>
+    </div>
+
+    <!-- Ring Slider -->
+
+
+    <div class="footer">
+        <button>Add to Cart</button>
+    </div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/vision_bundle.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<script type="module" >
+
+    import {
+    HandLandmarker,
+    FilesetResolver
+} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0";
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+import { getFirestore, doc, getDoc, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+const firebaseConfig = {
+            apiKey: "AIzaSyBAQSHVrSed5EXwziX8d9PxvWJXOvJXU10",
+            authDomain: "krishna-jewelry-app.firebaseapp.com",
+            projectId: "krishna-jewelry-app",
+            storageBucket: "krishna-jewelry-app.appspot.com",
+            messagingSenderId: "815449214948",
+            appId: "1:815449214948:android:97ec3686ee429aef1541f1",  // Replace with your app's ID
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+const video = document.getElementById("webcam");
+const canvasElement = document.getElementById("output_canvas");
+const canvasCtx = canvasElement.getContext("2d");
+
+video.style.transform = "scaleX(-1)";
+
+let handLandmarker;
+let runningMode = "VIDEO";
+let webcamRunning = true;
+let lastPosition = null;
+let ringImage = new Image();
+ringImage.src = 'ring1.png'; // Default ring
+
+
+// Switch ring based on slider selection
+document.querySelectorAll('.ring-option').forEach(option => {
+    option.addEventListener('click', () => {
+        ringImage.src = option.getAttribute('data-ring');
+    });
+});
+ async function fetchRingImage() {
+            try {
+                // Fetch the user's document using their email (shaikhsaniya1001@gmail.com)
+                const userDoc = await getDoc(doc(db, 'users', 'shaikhsaniya1001@gmail.com'));
+                if (!userDoc.exists()) {
+                    console.error("No user found!");
+                    return;
+                }
+
+                // Get the 'currently_viewing' product name from the user's document
+                const productName = userDoc.data().currentlySeeing;
+                if (!productName) {
+                    console.error("No product found in 'currently_viewing' field!");
+                    return;
+                }
+
+                console.log("Fetching product with name:", productName);  // Add this to log the productName
+
+                // Query the Items collection for the product with the matching name
+                const q = query(collection(db, 'Items'), where('productName', '==', productName));
+                const productSnapshot = await getDocs(q);
+
+                if (productSnapshot.empty) {
+                    console.error("No product found with name:", productName);  // Log if no product found
+                    return;
+                }
+
+                console.log("Found product:", productSnapshot.docs[0].data());  // Log the product data
+
+                // Get the image URL from the images map (0 index) in the product document
+                const productData = productSnapshot.docs[0].data();
+                const productImages = productData.images;
+                if (productImages && productImages[4]) {
+                    // Set the image URL to the ringImage src
+                    const imageUrl = productImages[4];
+                    ringImage.src = imageUrl; // Update ring image source
+                    console.log("Ring image updated to:", imageUrl);
+                } else {
+                    console.error("No image found for the product!");
+                }
+            } catch (error) {
+                console.error("Error fetching data from Firebase:", error);
+            }
+        }
+
+        // Call the fetchRingImage function on page load
+        fetchRingImage();
+navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+    video.srcObject = stream;
+    video.addEventListener("loadeddata", predictWebcam);
+}).catch(err => {
+    console.error("Error accessing the webcam: ", err);
+});
+
+const createHandLandmarker = async () => {
+    const vision = await FilesetResolver.forVisionTasks(
+        "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
+    );
+    handLandmarker = await HandLandmarker.createFromOptions(vision, {
+        baseOptions: {
+            modelAssetPath: "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+            delegate: "GPU"
+        },
+        runningMode: runningMode,
+        numHands: 2
+    });
+
+    startWebcam();
+};
+
+const startWebcam = () => {
+    if (!handLandmarker) {
+        console.log("Wait for handLandmarker to load.");
+        return;
+    }
+
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        video.srcObject = stream;
+        video.addEventListener("loadeddata", predictWebcam);
+    });
+};
+
+createHandLandmarker();
+
+let lastVideoTime = -1;
+
+async function predictWebcam() {
+    canvasElement.width = video.videoWidth;
+    canvasElement.height = video.videoHeight;
+
+    if (runningMode === "IMAGE") {
+        runningMode = "VIDEO";
+        await handLandmarker.setOptions({ runningMode: "VIDEO" });
+    }
+
+    if (lastVideoTime !== video.currentTime) {
+        lastVideoTime = video.currentTime;
+        const startTimeMs = performance.now();
+        const results = await handLandmarker.detectForVideo(video, startTimeMs);
+
+        canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+        if (results.landmarks && results.landmarks.length > 0) {
+            document.querySelector(".overlay-text").style.display = "none";
+            const indexFingerTip = results.landmarks[0][14];
+            lastPosition = indexFingerTip;
+            drawRing(indexFingerTip);
+        } else {
+            document.querySelector(".overlay-text").style.display = "block";
+            if (lastPosition) {
+                drawRing(lastPosition);
+            }
+        }
+    }
+
+    if (webcamRunning) {
+        window.requestAnimationFrame(predictWebcam);
+    }
+}
+
+function drawRing(landmark) {
+    const { x, y } = landmark;
+    const canvasWidth = canvasElement.width;
+    const canvasHeight = canvasElement.height;
+    const canvasX = (1 - x) * canvasWidth;
+    const canvasY = y * canvasHeight;
+    const ringSize = 55;
+
+    canvasCtx.save();
+    canvasCtx.translate(canvasX, canvasY);
+    canvasCtx.scale(-1, 1);
+    canvasCtx.drawImage(ringImage, -ringSize / 2, -ringSize / 2, ringSize, ringSize);
+    canvasCtx.restore();
+}
+</script>
+</body>
+</html>

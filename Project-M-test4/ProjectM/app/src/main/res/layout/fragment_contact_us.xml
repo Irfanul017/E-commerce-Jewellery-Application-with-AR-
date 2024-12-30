@@ -1,0 +1,55 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".navigation.ContactUsFragment">
+
+    <!-- Back Button and Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+
+        <TextView
+            android:id="@+id/store_locator_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Store Locator"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+
+    <!-- Welcome Text -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Welcome to Mahavir Gems!"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find our store at BKC, Mumbai."
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:padding="8dp"/>
+
+    <!-- Google Map -->
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NavBarText">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">2sp</item>
+    </style>
+    <style name="CustomCircularImage" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+        <item name="color">@color/gray</item>
+    </style>
+
+        <style name="CustomDatePickerStyle" parent="Theme.MaterialComponents.DayNight.Dialog">
+            <!-- Background color of the date picker dialog -->
+            <item name="colorSurface">@color/offwhite</item>
+
+            <!-- Text color of the header (title) -->
+            <item name="colorOnSurface">@color/black</item>
+
+            <!-- Text color of the selected date -->
+            <item name="colorPrimary">@color/black</item>
+
+            <!-- Text color of the unselected date -->
+            <item name="colorOnPrimary">@color/white</item>
+
+            <!-- Button text color -->
+            <item name="colorPrimaryVariant">@color/black</item>
+        </style>
+    </resources>
+

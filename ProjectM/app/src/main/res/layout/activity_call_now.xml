@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/offwhite"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+    <ImageView
+        android:id="@+id/back_button"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/all_arrow_back_black_eel"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Video Call"
+        android:textColor="@color/black_olive"
+        android:textSize="18sp"
+        android:fontFamily="@font/zen_antique"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/contactus_video_call_golden_bg"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginBottom="40dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/video_call"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_gravity="center"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/tenor_sans"
+            android:text="Mahavir"
+            android:textSize="30dp"
+            android:letterSpacing="0.2"
+            android:textColor="#927417"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="Our Personalised\n shopping experience is now \n coming home to you !"
+            android:textSize="27dp"
+            android:fontFamily="@font/zen_antique"
+            android:textColor="#927417"/>
+    </LinearLayout>
+
+    <!-- Full Name Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/alegreya_semibold"
+        android:text="Full name"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alegreya_semibold"
+        android:hint="Saniya Shaikh"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <!-- Email Field -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/alegreya_semibold"
+        android:text="Email"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etEmailId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alegreya_semibold"
+        android:hint="shikhsaniya1001@gmail.com"
+        android:inputType="textEmailAddress"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <!-- Mobile No Field -->
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/alegreya_semibold"
+        android:text="Mobile No"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/etMobileNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/alegreya_semibold"
+        android:hint="9082953372"
+        android:inputType="phone"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/alegreya_semibold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:layout_gravity="bottom">
+
+                <EditText
+                    android:id="@+id/etDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_semibold"
+                    android:hint="21 Nov 2024"
+                    android:inputType="date"
+                    android:paddingEnd="8dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+            <ImageView
+                android:id="@+id/imgCalender"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/baseline_calendar_month_24"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Time"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:fontFamily="@font/alegreya_semibold"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:layout_gravity="bottom">
+
+                <EditText
+                    android:id="@+id/etTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_semibold"
+                    android:hint="Please select Time"
+                    android:inputType="time"
+                    android:paddingEnd="8dp"
+                    tools:ignore="TouchTargetSizeCheck" />
+                <ImageView
+                    android:id="@+id/imgClock"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/clock"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/alegreya_semibold"
+        android:text="SUBMIT"
+        android:textSize="19dp"
+        android:backgroundTint="@color/black_olive"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
+</ScrollView>

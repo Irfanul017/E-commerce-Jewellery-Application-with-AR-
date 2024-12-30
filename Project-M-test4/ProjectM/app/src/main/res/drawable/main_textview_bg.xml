@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- A semi-transparent gray color to give a glass-like effect with a graying tint -->
+    <solid android:color="#56CCCCCC" /> <!-- Adjust the alpha and RGB values for desired transparency and tint -->
+
+    <!-- Light gray stroke with slight transparency -->
+    <stroke android:width="2dp" android:color="#99CCCCCC" />
+
+    <!-- Rounded corners -->
+    <corners android:radius="16dp" />
+
+    <!-- Optional padding -->
+    <padding android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp" />
+
+</shape>

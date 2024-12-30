@@ -1,0 +1,8 @@
+<!-- circle_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size
+        android:width="100dp"
+        android:height="100dp" />
+    <solid android:color="#F7F7F7" />
+    <corners android:radius="50dp" /> <!-- Half of 100dp makes it fully circular -->
+</shape>

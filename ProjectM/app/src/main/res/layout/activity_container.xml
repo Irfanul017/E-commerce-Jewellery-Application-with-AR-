@@ -1,0 +1,494 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/offwhite">
+
+        <RelativeLayout
+            android:id="@+id/header_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:paddingTop="16dp"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/location_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:drawablePadding="4dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="Mahavir Gems"
+                android:textColor="@color/brown_rust"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="8dp"
+               />
+
+            <RelativeLayout
+                android:id="@+id/search_bar_container"
+                android:layout_width="match_parent"
+                android:layout_height="37dp"
+                android:layout_below="@id/location_text"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="50dp">
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:background="@drawable/search_view_bg"
+                    app:iconifiedByDefault="false"
+                    app:queryHint="Search" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/cart_icon"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_below="@id/notification_icon"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_button_background"
+                android:padding="8dp"
+                android:src="@drawable/baseline_shopping_cart_24" />
+        </RelativeLayout>
+
+        <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header_title" />
+    </RelativeLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contactus_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:background="#BF3A3A38"
+            android:gravity="bottom">
+
+            <ImageView
+                android:id="@+id/close_btn"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/contactus_rounded_bg_white"
+                android:padding="10dp"
+                android:src="@drawable/plus_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.82"
+                app:layout_constraintHorizontal_bias="0.900"/>
+
+            <TextView
+                android:id="@+id/txtClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Close"
+                android:textColor="@color/offwhite"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/zen_antique"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.80"
+                app:layout_constraintHorizontal_bias="0.680"/>
+
+            <ImageView
+                android:id="@+id/imgPhoneCall"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/contactus_rounded_bg_white"
+                android:padding="10dp"
+                android:src="@drawable/call_now"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.71"
+            app:layout_constraintHorizontal_bias="0.900"/>
+
+            <TextView
+                android:id="@+id/txtCallNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Call Now"
+                android:textColor="@color/offwhite"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/zen_antique"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.70"
+                app:layout_constraintHorizontal_bias="0.680"/>
+
+
+            <ImageView
+                android:id="@+id/imgWhastapp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/contactus_rounded_bg_white"
+                android:padding="5dp"
+                android:src="@drawable/whatsapp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.60"
+                app:layout_constraintHorizontal_bias="0.900"/>
+
+            <TextView
+                android:id="@+id/txtWhatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WhatsApp"
+                android:textColor="@color/offwhite"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/zen_antique"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.59"
+                app:layout_constraintHorizontal_bias="0.670"/>
+
+            <ImageView
+                android:id="@+id/imgBookAppointment"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/contactus_rounded_bg_white"
+                android:padding="10dp"
+                android:src="@drawable/calendar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.49"
+                app:layout_constraintHorizontal_bias="0.900"/>
+
+            <TextView
+                android:id="@+id/txtAppointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book an Appointment"
+                android:textColor="@color/offwhite"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/zen_antique"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.49"
+                app:layout_constraintHorizontal_bias="0.670"/>
+
+            <ImageView
+                android:id="@+id/imgChatBot"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/contactus_rounded_bg_white"
+                android:padding="10dp"
+                android:src="@drawable/chatbot"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38"
+                app:layout_constraintHorizontal_bias="0.900"/>
+
+            <TextView
+                android:id="@+id/txtChatBot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chatbot"
+                android:textColor="@color/offwhite"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/zen_antique"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.39"
+                app:layout_constraintHorizontal_bias="0.670"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:elevation="7dp"
+        android:background="@color/transparent"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom">
+
+
+        <ImageView
+            android:id="@+id/home2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview2"
+            android:elevation="7dp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:src="@drawable/baseline_filled_home_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview"
+            android:elevation="5dp"
+            android:padding="10dp"
+            android:src="@drawable/baseline_home_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.128"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+        <ImageView
+            android:id="@+id/offers"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview"
+            android:elevation="5dp"
+            android:padding="10dp"
+            android:src="@drawable/bottombar_diamond_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.370"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+
+        <ImageView
+            android:id="@+id/offers2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="7dp"
+            android:foregroundGravity="center"
+            android:background="@drawable/bottom_bar_circular_imageview2"
+            android:elevation="7dp"
+            android:padding="10dp"
+            android:src="@drawable/bottombar_filled_diamond_ic"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.370"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+        <ImageView
+            android:id="@+id/contactUs"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview"
+            android:elevation="5dp"
+            android:padding="10dp"
+            android:src="@drawable/bottombar_contactus_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.630"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+
+        <ImageView
+            android:id="@+id/contactUs2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview2"
+            android:elevation="7dp"
+            android:padding="10dp"
+            android:src="@drawable/bottombar_filled_contactus_ic"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.630"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+        <ImageView
+            android:id="@+id/you"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview"
+            android:elevation="5dp"
+            android:padding="10dp"
+            android:src="@drawable/bottombar_you_ic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+
+        <ImageView
+            android:id="@+id/you2"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/bottom_bar_circular_imageview2"
+            android:elevation="7dp"
+            android:padding="10dp"
+            android:src="@drawable/bottombar_filled_you_ic"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.875"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.71" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/outerBottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curved_outter_bottom_bar_bg"
+            android:elevation="6dp">
+
+
+            <LinearLayout
+                android:id="@+id/bottomBar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/curved_bottom_bar_bg"
+                android:elevation="7dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+               </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+    <!--        <nl.joery.animatedbottombar.AnimatedBottomBar-->
+    <!--            android:id="@+id/bottomBar"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="56dp"-->
+    <!--            android:layout_marginLeft="25dp"-->
+    <!--            android:layout_marginRight="25dp"-->
+    <!--            android:layout_marginBottom="20dp"-->
+    <!--            android:background="@drawable/bottom_nav"-->
+    <!--            android:elevation="8dp"-->
+    <!--            android:padding="4dp"-->
+    <!--            app:abb_animationDuration="300"-->
+    <!--            app:abb_animationInterpolator="@anim/over_shoot"-->
+    <!--            app:abb_badgeBackgroundColor="#F44336"-->
+    <!--            app:abb_indicatorColor="?attr/colorTertiary"-->
+    <!--            app:abb_indicatorLocation="bottom"-->
+    <!--            app:abb_indicatorMargin="28dp"-->
+    <!--            app:abb_selectedTabType="text"-->
+    <!--            app:abb_tabColor="?attr/colorOutline"-->
+    <!--            app:abb_tabColorDisabled="?attr/colorPrimaryContainer"-->
+    <!--            app:abb_tabColorSelected="@color/black"-->
+    <!--            app:abb_tabs="@menu/menu_for_container"-->
+    <!--            app:abb_textAppearance="@style/NavBarText"-->
+    <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintHorizontal_bias="0.733"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent"-->
+    <!--            app:layout_constraintVertical_bias="1.0"-->
+    <!--            tools:visibility="visible" />-->
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+
+
+    <!--    <FrameLayout-->
+<!--        android:id="@+id/frame"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="543dp"-->
+<!--        android:layout_below="@+id/header_title"-->
+<!--        android:layout_above="@id/bottomBar"/>-->
+
+
+<!--    <nl.joery.animatedbottombar.AnimatedBottomBar-->
+<!--        android:id="@+id/bottomBar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        android:layout_marginBottom="25dp"-->
+<!--        android:background="@drawable/bottom_nav"-->
+<!--        android:elevation="8dp"-->
+<!--        android:padding="4dp"-->
+<!--        app:abb_animationDuration="300"-->
+<!--        app:abb_animationInterpolator="@anim/over_shoot"-->
+<!--        app:abb_badgeBackgroundColor="#F44336"-->
+<!--        app:abb_indicatorColor="?attr/colorTertiary"-->
+<!--        app:abb_indicatorLocation="bottom"-->
+<!--        app:abb_indicatorMargin="28dp"-->
+<!--        app:abb_selectedTabType="text"-->
+<!--        app:abb_tabColor="?attr/colorOutline"-->
+<!--        app:abb_tabColorDisabled="?attr/colorPrimaryContainer"-->
+<!--        app:abb_tabColorSelected="@color/black"-->
+
+<!--        app:abb_tabs="@menu/menu_for_container"-->
+<!--        app:abb_textAppearance="@style/NavBarText"-->
+<!--        tools:visibility="visible" />-->
+
+</RelativeLayout>

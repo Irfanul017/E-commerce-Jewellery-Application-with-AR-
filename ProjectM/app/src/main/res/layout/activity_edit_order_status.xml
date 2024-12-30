@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".admin.EditOrderStatusActivity">
+
+
+    <!-- Header with Title -->
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Order Status"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
+
+    <!-- Order Number Label and Input -->
+    <TextView
+        android:id="@+id/orderNumberLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Number"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <EditText
+        android:id="@+id/orderNumberInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter order number"
+        android:inputType="text"
+        android:background="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Order Status Label and Dropdown -->
+    <TextView
+        android:id="@+id/orderStatusLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Order Status"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingTop="16dp" />
+
+    <Spinner
+        android:id="@+id/orderStatusSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/white"
+        android:padding="12dp" />
+
+    <!-- Tracking Details Label and Input -->
+    <TextView
+        android:id="@+id/trackingDetailsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tracking Details"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingTop="16dp" />
+
+    <EditText
+        android:id="@+id/trackingDetailsInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter tracking information"
+        android:inputType="text"
+        android:background="@android:color/white"
+        android:padding="12dp"
+        android:layout_marginTop="8dp" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:textColor="@android:color/white"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp" />
+
+
+</LinearLayout>

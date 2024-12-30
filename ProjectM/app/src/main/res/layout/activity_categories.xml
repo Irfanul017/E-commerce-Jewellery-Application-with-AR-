@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".navigation.Categories">
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/tenor_sans"
+        android:text="Our categories"
+        android:textColor="@color/brown_rust"
+        android:textSize="29sp" />
+
+    <HorizontalScrollView
+        android:id="@+id/HorizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:padding="8dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/kidsCategory"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circular_categories_bg"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/children" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/tenor_sans"
+                        android:text="Kids"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/menCategory"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circular_categories_bg"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/man2" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/tenor_sans"
+                        android:text="Men"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/womenCategory"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circular_categories_bg"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/woman23" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/tenor_sans"
+                        android:text="Women"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/necklaceCategory"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circular_categories_bg"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/necklace44" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="5dp"
+                        android:fontFamily="@font/tenor_sans"
+                        android:text="necklace"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/ringCategory"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circular_categories_bg"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/diamondring" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/tenor_sans"
+                        android:text="Ring"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="6dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/braceletCategory"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/circular_categories_bg"
+                        android:padding="10dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bracelet44" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="7dp"
+                        android:fontFamily="@font/tenor_sans"
+                        android:text="Bracelet"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleviewCategories"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/HorizontalScrollView"
+        android:background="@color/offwhite" />
+
+
+</RelativeLayout>

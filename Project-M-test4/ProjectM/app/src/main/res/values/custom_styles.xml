@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="cricular">
+        <item name="cornerSize">10%</item>S
+    </style>
+</resources>

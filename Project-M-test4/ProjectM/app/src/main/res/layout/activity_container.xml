@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:id="@+id/header_title">
+
+        <TextView
+            android:id="@+id/location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mahavir Gems"
+            android:textColor="@android:color/black"
+            android:textSize="29sp"
+            android:fontFamily="@font/tenor_sans"
+            android:drawablePadding="4dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"/>
+
+        <ImageView
+            android:id="@+id/notification_icon"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/bell_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"/>
+
+        <RelativeLayout
+            android:id="@+id/search_bar_container"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/location_text"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/search_background">
+
+            <EditText
+                android:id="@+id/search_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Search"
+                android:paddingStart="16dp"
+                android:background="@android:color/transparent"
+                android:textColor="@android:color/black"/>
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/filter_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_filter"
+            android:background="@drawable/rounded_button_background"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@id/notification_icon"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="543dp"
+        android:layout_below="@+id/header_title"
+        android:layout_above="@id/bottomBar"/>
+
+
+    <nl.joery.animatedbottombar.AnimatedBottomBar
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/bottom_nav"
+        android:elevation="8dp"
+        android:padding="4dp"
+        app:abb_animationDuration="300"
+        app:abb_animationInterpolator="@anim/over_shoot"
+        app:abb_badgeBackgroundColor="#F44336"
+        app:abb_indicatorColor="?attr/colorTertiary"
+        app:abb_indicatorLocation="bottom"
+        app:abb_indicatorMargin="28dp"
+        app:abb_selectedTabType="text"
+        app:abb_tabColor="?attr/colorOutline"
+        app:abb_tabColorDisabled="?attr/colorPrimaryContainer"
+        app:abb_tabColorSelected="@color/black"
+
+        app:abb_tabs="@menu/menu_for_container"
+        app:abb_textAppearance="@style/NavBarText"
+        tools:visibility="visible" />
+
+
+</RelativeLayout>

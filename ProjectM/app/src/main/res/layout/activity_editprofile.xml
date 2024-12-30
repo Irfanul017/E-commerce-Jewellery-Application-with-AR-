@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".Editprofile">
+
+    <!-- Header Layout with Back Arrow and Title -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Back Arrow Icon -->
+
+        <!-- Title Text -->
+        <ImageView
+            android:id="@+id/back_btnedpro"
+            android:layout_width="40dp"
+            android:layout_height="42dp"
+            android:contentDescription="@string/fav_icon_desc"
+            android:src="@drawable/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/tenor_sans"
+            android:gravity="center"
+            android:text="Edit Profile"
+            android:textColor="@color/brown_rust"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Profile Section -->
+    <LinearLayout
+        android:id="@+id/user_profile_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2" />
+
+    <!-- ScrollView wrapping only the user info section -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/save_changes_button"
+        app:layout_constraintTop_toBottomOf="@id/user_profile_section">
+
+        <!-- User Info Section -->
+
+        <LinearLayout
+            android:id="@+id/user_info_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/tenor_sans"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Username Section -->
+            <TextView
+                android:id="@+id/username_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="@string/username" />
+
+            <EditText
+                android:id="@+id/username_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_username"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- Email Section -->
+            <TextView
+                android:id="@+id/email_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="@string/email1" />
+
+            <EditText
+                android:id="@+id/email_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_email"
+                android:inputType="textEmailAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- Address Section -->
+            <TextView
+                android:id="@+id/address_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="@string/address1" />
+
+            <TextView
+                android:id="@+id/street_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="Street" />
+
+            <EditText
+                android:id="@+id/street_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_address"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- Building Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="Building" />
+
+            <EditText
+                android:id="@+id/building_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_address"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- City Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="City" />
+
+            <EditText
+                android:id="@+id/address_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_address"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- State Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="State" />
+
+            <EditText
+                android:id="@+id/state_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_address"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- Pincode Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="Pincode" />
+
+            <EditText
+                android:id="@+id/pincode_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_address"
+                android:inputType="textPostalAddress"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <!-- Phone Number Section -->
+
+            <TextView
+                android:id="@+id/age_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="Age" />
+
+            <EditText
+                android:id="@+id/age_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="Enter your age"
+                android:inputType="textVisiblePassword"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+            <TextView
+                android:id="@+id/phone_number_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/tenor_sans"
+                android:text="@string/phone_number" />
+
+            <EditText
+                android:id="@+id/phone_number_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints=""
+                android:fontFamily="@font/tenor_sans"
+                android:hint="@string/enter_your_phone_number"
+                android:inputType="textVisiblePassword"
+                android:minHeight="48dp"
+                android:textColorHint="#546E7A" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_changes_button"
+        android:layout_width="153dp"
+        android:layout_height="48dp"
+
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/product_description_filled_button"
+        android:text="Save Changes"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <!-- Save Changes Button -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

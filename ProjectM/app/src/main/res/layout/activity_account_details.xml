@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".AccountDetailsActivity">
+
+    <!-- Header Layout with Back Arrow and Title -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        tools:ignore="MissingConstraints">
+
+        <!-- Back Arrow Icon -->
+        <ImageView
+            android:id="@+id/back_arr"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/fav_icon_desc"
+            android:src="@drawable/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Title Text -->
+        <TextView
+            android:layout_width="272dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/tenor_sans"
+            android:gravity="center"
+            android:text="My Profile"
+            android:textColor="@color/brown_rust"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/editprfile_imgView"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/brown_rust"
+            android:backgroundTintMode="add"
+            android:src="@drawable/ic_edit"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <!-- User Form Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2">
+
+        <!-- Profile ImageView -->
+
+        <!-- Username Label -->
+
+        <!-- Username TextView -->
+
+        <TextView
+            android:id="@+id/username_label"
+            android:layout_width="82dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/tenor_sans"
+            android:text="@string/name"
+            android:textColor="@color/brown_rust"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextSizeCheck" />
+
+        <TextView
+            android:id="@+id/username_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/tenor_sans"
+            android:minHeight="42dp"
+            android:textColor="@color/black_olive"
+            android:textSize="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username_label" />
+
+        <!-- Email Label -->
+
+        <!-- Email TextView -->
+        <TextView
+            android:id="@+id/email_label"
+            android:layout_width="57dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/tenor_sans"
+            android:text="@string/email1"
+            android:textColor="@color/brown_rust"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username_text_view" />
+
+        <TextView
+            android:id="@+id/email_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/tenor_sans"
+            android:minHeight="42dp"
+            android:textColor="@color/black_olive"
+            android:textSize="19dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_label" />
+
+        <!-- Address Label -->
+        <TextView
+            android:id="@+id/address_label"
+            android:layout_width="63dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/tenor_sans"
+            android:text="@string/address1"
+            android:textColor="@color/brown_rust"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_text_view" />
+
+        <!-- Address TextView -->
+        <TextView
+            android:id="@+id/address_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/tenor_sans"
+            android:minHeight="42dp"
+            android:textColor="@color/black_olive"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_label" />
+
+        <!-- Phone Number Label -->
+        <TextView
+            android:id="@+id/phone_number_label"
+            android:layout_width="137dp"
+            android:layout_height="31dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/tenor_sans"
+            android:text="@string/phone_number"
+            android:textColor="@color/brown_rust"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_text_view"
+            tools:ignore="TextSizeCheck" />
+
+        <!-- Phone Number TextView -->
+        <TextView
+            android:id="@+id/phone_number_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/tenor_sans"
+            android:minHeight="42dp"
+            android:textColor="@color/black_olive"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_number_label" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

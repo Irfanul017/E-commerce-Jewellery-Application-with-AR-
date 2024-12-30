@@ -1,0 +1,35 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+
+    <!-- Optional white outer circle outline for contrast -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M2,24a22,22 0 1,1 44,0a22,22 0 1,1 -44,0" />
+
+    <!-- Left straight purple line (thinner) -->
+    <path
+        android:fillColor="#8A2BE2"
+        android:strokeColor="#8A2BE2"
+        android:strokeWidth="2"
+    android:pathData="M18,14 L18,34"
+    android:strokeLineCap="round" />
+
+    <!-- Middle straight purple line (thinner) -->
+    <path
+        android:fillColor="#8A2BE2"
+        android:strokeColor="#8A2BE2"
+        android:strokeWidth="2.5"
+    android:pathData="M24,12 L24,38"
+    android:strokeLineCap="round" />
+
+    <!-- Right straight purple line (thinner) -->
+    <path
+        android:fillColor="#8A2BE2"
+        android:strokeColor="#8A2BE2"
+        android:strokeWidth="2"
+    android:pathData="M30,14 L30,34"
+    android:strokeLineCap="round" />
+</vector>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Accountdetails">
+
+    <!-- Header Layout with Back Arrow and Title -->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046"
+        tools:ignore="MissingConstraints">
+
+        <!-- Back Arrow Icon -->
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Back Arrow"
+            android:src="@drawable/ic_back"
+            app:tint="#000000" />
+
+        <!-- Title Text -->
+
+        <!-- Edit Profile Icon -->
+        <TextView
+            android:layout_width="272dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="My Profile"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/editprfile_imgView"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_edit" />
+    </LinearLayout>
+
+    <!-- User Form Layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <!-- Profile ImageView -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Profile Image"
+            android:src="@drawable/profile_placeholder"
+            app:shapeAppearanceOverlay="@style/cricular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" /> <!-- Replace with actual drawable resource -->
+
+
+        <!-- Username Label -->
+        <TextView
+            android:id="@+id/username_label"
+            android:layout_width="53dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profile_image" />
+
+        <!-- Username EditText -->
+        <EditText
+            android:id="@+id/username_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="john wick"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username_label"
+            android:inputType="text" />
+
+        <!-- Email Label -->
+        <TextView
+            android:id="@+id/email_label"
+            android:layout_width="57dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/email1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/username_edit_text" />
+
+        <!-- Email EditText -->
+        <EditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="johnwick12@gmail.com"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_label"
+            android:inputType="textEmailAddress" />
+
+        <!-- Address Label -->
+        <TextView
+            android:id="@+id/address_label"
+            android:layout_width="63dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/address1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
+
+        <!-- Address EditText -->
+
+        <!-- Phone Number Label -->
+        <EditText
+            android:id="@+id/address_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="48,Street Subway,LA,USA "
+            android:inputType="textPostalAddress"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_label" />
+
+        <TextView
+            android:id="@+id/phone_number_label"
+            android:layout_width="99dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/phone_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address_edit_text" />
+
+        <!-- Phone Number EditText -->
+        <EditText
+            android:id="@+id/phone_number_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="0000000000"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/phone_number_label"
+            android:inputType="phone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

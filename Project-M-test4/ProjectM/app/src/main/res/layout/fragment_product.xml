@@ -1,0 +1,180 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Scrollable content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Title Row with Explore and Sort/View Switch Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/tvExplore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/tenor_sans"
+                    android:text="Explore"
+                    android:textColor="@color/primary_text_color"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <!-- Sort Button to change view to List -->
+                <ImageButton
+                    android:id="@+id/btnSortList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_list_view"
+                    android:contentDescription="List View"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="8dp"/>
+
+                <!-- Sort Button to change view to Grid -->
+                <ImageButton
+                    android:id="@+id/btnSortGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_grid_view"
+                    android:contentDescription="Grid View"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="8dp"/>
+            </LinearLayout>
+
+            <!-- Horizontal Scrollable Price Filter Row -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="16dp"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!-- Price Range Buttons -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/filter_button_bg"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="00 - ₹25,000"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:layout_marginRight="5dp"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/filter_button_bg"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="₹25,000- ₹50,000"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:layout_marginRight="5dp"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/filter_button_bg"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="₹50,000- ₹75,000"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:layout_marginRight="5dp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/filter_button_bg"
+                        android:backgroundTintMode="add"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="₹75,000 - ₹1,00,000"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:layout_marginRight="5dp"/>
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/filter_button_bg"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="8dp"
+                        android:text="₹1,00,000- ₹2,00,000"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp" />
+
+                    <!-- Add more buttons as needed -->
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- RecyclerView for the product items -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:paddingTop="8dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Sticky Filter and Sort Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="16dp">
+
+        <!-- Filter Button -->
+        <TextView
+            android:id="@+id/btnFilter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Filter"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+        <!-- Divider -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#DDDDDD"/>
+
+        <!-- Sort By Button -->
+        <TextView
+            android:id="@+id/btnSort"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Sort By"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+    </LinearLayout>
+
+</RelativeLayout>

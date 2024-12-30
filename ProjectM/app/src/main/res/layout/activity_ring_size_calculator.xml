@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <View
+        android:id="@+id/circleView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/ring_size_calculator_circle" />
+
+    <SeekBar
+        android:id="@+id/diameterSeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/diameterValueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Diameter: 14 mm" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/calculate_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:textSize="18dp"
+        android:text="Calculate Ring Size"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

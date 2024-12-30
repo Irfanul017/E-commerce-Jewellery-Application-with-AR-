@@ -1,0 +1,259 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="15dp"
+    android:background="#F5F5F5">
+
+    <!-- Header with Back Arrow, Title, and Icon Button -->
+    <LinearLayout
+        android:layout_width="381dp"
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        tools:ignore="UseCompoundDrawables">
+
+        <!-- Back Arrow Icon -->
+        <ImageView
+            android:layout_width="34dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="Back Arrow"
+            android:src="@drawable/ic_back"
+            app:tint="#000000" />
+
+        <!-- Title Text -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Profile"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <!-- Profile Header with Image and Name -->
+    <LinearLayout
+        android:layout_width="365dp"
+        android:layout_height="205dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="15dp"
+        tools:ignore="ExtraText,VisualLintBounds"
+        android:paddingBottom="10dp">
+
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="146dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:contentDescription="Profile Image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile_placeholder" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="UserNAme"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <!-- Profile Options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:elevation="4dp"
+        android:layout_marginTop="30dp">
+
+        <!-- My Profile -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_user"
+                android:contentDescription="My Profile Icon"
+                app:tint="#000000" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="My Profile"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/profile_forwardimg"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/forward_img"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/w1"
+                 />
+        </LinearLayout>
+
+
+        <!-- My Address -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="My Address Icon"
+                android:src="@drawable/ic_address"
+                 />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:text="My Address"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/address_frowardimg"
+                android:layout_width="24dp"
+                android:layout_height="20dp"
+                android:contentDescription="@string/arrow"
+                android:src="@drawable/forward_img"
+                android:backgroundTint="@color/white"
+               />
+        </LinearLayout>
+
+        <!-- My Orders -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/myorder_ic"
+                android:contentDescription="My Orders Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:text="My Orders"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+
+            <ImageView
+                android:id="@+id/oder_forwardimg"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/forward_img"
+                android:contentDescription="@string/arrow3"
+                 android:backgroundTint="@color/white" />
+
+        </LinearLayout>
+
+
+        <!-- Track Order -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/track_order_ic"
+                android:contentDescription="My Profile Icon"
+                app:tint="#000000" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/track_order1"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/track_order_forwardimg"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/forward_img"
+                android:contentDescription="@string/arrow1"
+                android:backgroundTint="@color/white"/>
+        </LinearLayout>
+
+        <!-- Log Out -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/logout_ic"
+                android:contentDescription="My Profile Icon" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:text="@string/log_out1"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/logout_forwardimg"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/forward_img"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/arrow2" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>

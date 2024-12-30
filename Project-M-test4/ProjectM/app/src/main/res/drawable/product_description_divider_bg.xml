@@ -1,0 +1,13 @@
+<!-- res/drawable/inner_shadow_divider.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="1dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#F6FBF8F8"
+                android:centerColor="#F6FBF8F8"
+                android:endColor="#D0CFCF"
+                android:angle="90" />
+            <stroke android:color="#D0CFCF" android:width=".6dp"/>
+        </shape>
+    </item>
+</layer-list>

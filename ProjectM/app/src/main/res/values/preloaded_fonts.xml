@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aladin</item>
+        <item>@font/alegreya_semibold</item>
+        <item>@font/castoro_titling</item>
+        <item>@font/poppins_bold</item>
+        <item>@font/zilla_slab_semibold</item>
+        <item>@font/tenor_sans</item>
+    </array>
+</resources>

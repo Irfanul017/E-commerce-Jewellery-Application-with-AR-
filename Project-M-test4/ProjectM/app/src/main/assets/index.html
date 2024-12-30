@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Ring Try-On</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="videoView">
+    <div class="header">
+        <div class="logo">Mahavir</div>
+    </div>
+
+    <video id="webcam" autoplay playsinline></video>
+    <canvas id="output_canvas"></canvas>
+
+    <div class="overlay-text">
+        <p>SHOW YOUR HAND</p>
+        <p>To achieve the best results when virtually trying on, keep a 10-inch distance, and ensure clear visibility!</p>
+    </div>
+
+    <!-- Ring Slider -->
+    <div class="ring-slider">
+        <img src="ring1.png" class="ring-option" data-ring="ring1.png">
+        <img src="ring2.png" class="ring-option" data-ring="ring2.png">
+        <img src="ring3.png" class="ring-option" data-ring="ring3.png">
+        <img src="ring4.png" class="ring-option" data-ring="ring4.png">
+    </div>
+
+    <div class="footer">
+        <button>Add to Cart</button>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/vision_bundle.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+<script type="module" >
+    import {
+    HandLandmarker,
+    FilesetResolver
+} from "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0";
+
+const video = document.getElementById("webcam");
+const canvasElement = document.getElementById("output_canvas");
+const canvasCtx = canvasElement.getContext("2d");
+
+video.style.transform = "scaleX(-1)";
+
+let handLandmarker;
+let runningMode = "VIDEO";
+let webcamRunning = true;
+let lastPosition = null;
+let ringImage = new Image();
+ringImage.src = 'ring1.png'; // Default ring
+
+// Switch ring based on slider selection
+document.querySelectorAll('.ring-option').forEach(option => {
+    option.addEventListener('click', () => {
+        ringImage.src = option.getAttribute('data-ring');
+    });
+});
+
+navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+    video.srcObject = stream;
+    video.addEventListener("loadeddata", predictWebcam);
+}).catch(err => {
+    console.error("Error accessing the webcam: ", err);
+});
+
+const createHandLandmarker = async () => {
+    const vision = await FilesetResolver.forVisionTasks(
+        "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0/wasm"
+    );
+    handLandmarker = await HandLandmarker.createFromOptions(vision, {
+        baseOptions: {
+            modelAssetPath: "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+            delegate: "GPU"
+        },
+        runningMode: runningMode,
+        numHands: 2
+    });
+
+    startWebcam();
+};
+
+const startWebcam = () => {
+    if (!handLandmarker) {
+        console.log("Wait for handLandmarker to load.");
+        return;
+    }
+
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+        video.srcObject = stream;
+        video.addEventListener("loadeddata", predictWebcam);
+    });
+};
+
+createHandLandmarker();
+
+let lastVideoTime = -1;
+
+async function predictWebcam() {
+    canvasElement.width = video.videoWidth;
+    canvasElement.height = video.videoHeight;
+
+    if (runningMode === "IMAGE") {
+        runningMode = "VIDEO";
+        await handLandmarker.setOptions({ runningMode: "VIDEO" });
+    }
+
+    if (lastVideoTime !== video.currentTime) {
+        lastVideoTime = video.currentTime;
+        const startTimeMs = performance.now();
+        const results = await handLandmarker.detectForVideo(video, startTimeMs);
+
+        canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+
+        if (results.landmarks && results.landmarks.length > 0) {
+            document.querySelector(".overlay-text").style.display = "none";
+            const indexFingerTip = results.landmarks[0][14];
+            lastPosition = indexFingerTip;
+            drawRing(indexFingerTip);
+        } else {
+            document.querySelector(".overlay-text").style.display = "block";
+            if (lastPosition) {
+                drawRing(lastPosition);
+            }
+        }
+    }
+
+    if (webcamRunning) {
+        window.requestAnimationFrame(predictWebcam);
+    }
+}
+
+function drawRing(landmark) {
+    const { x, y } = landmark;
+    const canvasWidth = canvasElement.width;
+    const canvasHeight = canvasElement.height;
+    const canvasX = (1 - x) * canvasWidth;
+    const canvasY = y * canvasHeight;
+    const ringSize = 40;
+
+    canvasCtx.save();
+    canvasCtx.translate(canvasX, canvasY);
+    canvasCtx.scale(-1, 1);
+    canvasCtx.drawImage(ringImage, -ringSize / 2, -ringSize / 2, ringSize, ringSize);
+    canvasCtx.restore();
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Editprofile">
+
+    <!-- Wrapping content with ScrollView -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <!-- Linear Layout Container for Scrollable Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header Layout with Back Arrow and Title -->
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="87dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginEnd="9dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <!-- Back Arrow Icon -->
+                <ImageView
+                    android:layout_width="46dp"
+                    android:layout_height="51dp"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="Back Arrow"
+                    android:src="@drawable/ic_back"
+                    app:tint="#000000" />
+
+                <!-- Title Text -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Edit Profile"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Profile Section -->
+            <LinearLayout
+                android:id="@+id/user_profile_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:elevation="2dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="147dp"
+                    android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/user_profile_picture"
+                    android:padding="4dp"
+                    app:shapeAppearanceOverlay="@style/cricular"
+                    android:src="@drawable/profile_placeholder" />
+
+                <TextView
+                    android:id="@+id/edit_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins_bold"
+                    android:paddingTop="7dp"
+                    android:text="@string/change_photo"
+                    android:textColor="#616161"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <!-- User Info Section -->
+            <LinearLayout
+                android:id="@+id/user_info_section"
+                android:layout_width="match_parent"
+                android:layout_height="396dp"
+                android:layout_marginTop="2dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Username Section -->
+                <TextView
+                    android:id="@+id/username_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/username" />
+
+                <EditText
+                    android:id="@+id/username_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:hint="@string/enter_your_username"
+                    android:inputType="text"
+                    android:minHeight="48dp"
+                    android:textColorHint="#546E7A" />
+
+                <!-- Email Section -->
+                <TextView
+                    android:id="@+id/email_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/email1" />
+
+                <EditText
+                    android:id="@+id/email_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:autofillHints=""
+                    android:hint="@string/enter_your_email"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:textColorHint="#546E7A" />
+
+                <!-- Address Section -->
+                <TextView
+                    android:id="@+id/address_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/address1" />
+
+                <EditText
+                    android:id="@+id/address_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:autofillHints=""
+                    android:hint="@string/enter_your_address"
+                    android:inputType="textPostalAddress"
+                    android:minHeight="48dp"
+                    android:textColorHint="#546E7A" />
+
+                <!-- Phone Number Section -->
+                <TextView
+                    android:id="@+id/phone_number_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/phone_number" />
+
+                <EditText
+                    android:id="@+id/phone_number_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:autofillHints=""
+                    android:hint="@string/enter_your_phone_number"
+                    android:inputType="textVisiblePassword"
+                    android:minHeight="48dp"
+                    android:textColorHint="#546E7A" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/save_changes_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/save_changes" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Save Changes Button -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

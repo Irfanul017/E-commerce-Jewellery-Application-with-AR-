@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F9F9F9">
+
+    <TextView
+        android:id="@+id/orderIdTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order ID:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/trackIdTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Track ID:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/orderDetailsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Details:"
+        android:textSize="16sp"
+        android:padding="8dp" />
+
+    <TextView
+        android:id="@+id/totalAmountTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Amount:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="8dp" />
+
+</LinearLayout>

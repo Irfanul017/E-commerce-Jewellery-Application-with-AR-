@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#BB6E48" /> <!-- Darker background color for selected state -->
+    <corners android:radius="360dp" /> <!-- Keeps the background circular -->
+    <stroke
+        android:width="2dp"
+        android:color="#A0522D" /> <!-- Optional: Add a border to enhance selection -->
+</shape>

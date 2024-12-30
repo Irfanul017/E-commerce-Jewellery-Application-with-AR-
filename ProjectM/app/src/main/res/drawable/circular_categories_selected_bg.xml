@@ -1,0 +1,25 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:startColor="#FAE5D7"
+        android:centerColor="#F8ECE5"
+        android:endColor="#FBF4F0"
+        android:angle="45"/>
+    <corners android:radius="360dp"/>
+    <stroke
+        android:width="2dp"
+        android:color="@color/brown_rust" />
+    <size android:width="65dp"
+        android:height="65dp"/><!-- Makes the background circular -->
+</shape>
+
+
+
+
+
+
+
+
+
+
+
+

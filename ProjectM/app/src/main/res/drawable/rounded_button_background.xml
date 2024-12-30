@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">x
+       <gradient
+           android:startColor="@color/bright_golden"
+           android:centerColor="@color/dark_golden"
+           android:endColor="@color/medium_golden"
+           android:angle="45"/>
+        <corners android:radius="450dp"/> <!-- Ensures the button is fully rounded (circle) -->
+        </shape>
+    </item>
+
+    <item android:top="2dp" android:bottom="2dp" android:right="2dp" android:left="2dp">
+        <shape android:shape="rectangle">
+    <solid android:color="@color/brown_rust"/> <!-- White background (change as needed) -->
+    <corners android:radius="450dp"/> <!-- Ensures the button is fully rounded (circle) -->
+        </shape>
+    </item>
+</layer-list>

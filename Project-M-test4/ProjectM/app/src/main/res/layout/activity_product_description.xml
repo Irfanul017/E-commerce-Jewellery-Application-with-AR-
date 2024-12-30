@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="@color/white"
+    tools:context=".description.ProductDescription">
+
+    <ScrollView
+        android:id="@+id/outerScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="20dp"
+        android:layout_marginTop="59dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <!-- ViewPager2 with responsive height -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+                android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/product_des_viewpager_bg"
+            android:padding="16dp" />
+
+            <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                android:id="@+id/dotsIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:dotsColor="#c4c4c4"
+                app:dotsCornerRadius="21dp"
+                app:dotsSize="6dp"
+                app:dotsSpacing="2dp"
+                app:dotsWidthFactor="2.5"
+                app:selectedDotColor="@color/black" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clipToPadding="false"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/zen_antique"
+                    android:text="@string/mahavir"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/zen_antique"
+                    android:text="@string/_18k_real_gold_and_diamond_ring"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/zen_antique"
+                    android:text="@string/_40_580"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/zen_antique"
+                    android:text="@string/inclusive_of_all_taxes"
+                    android:textColor="@color/text_gray"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:background="@drawable/product_description_divider_bg" />
+
+
+            <LinearLayout
+                android:id="@+id/store_location_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/zen_antique"
+                    android:gravity="center_vertical"
+                    android:text="@string/store_location"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="TODO"
+                    android:src="@drawable/destination" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:background="@drawable/product_description_divider_bg" />
+
+
+            <RelativeLayout
+                android:id="@+id/size_and_weight_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingTop="25dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="25dp">
+
+                <TextView
+                    android:id="@+id/size_and_gross_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/zen_antique"
+                    android:text="@string/size_mm_and_gross_weight_gms"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/size_in_mm_and_gr_oss_weight_in_gms"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/size_and_gross_weight"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/zen_antique"
+                    android:text="@string/size_in_mm_and_gr_oss_weight_in_gms"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/down_arrow_size_weight"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/all_ic_expandale_arrow" />
+
+
+
+                <LinearLayout
+                    android:id="@+id/size_and_weight_extandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/size_and_gross_weight"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/zen_antique"
+                        android:text="@string/size_mm"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/size_recycle_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp" />
+
+                    <LinearLayout
+                        android:id="@+id/calculated_size_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/calculated_size_des"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/zen_antique"
+                            android:text="oops ! your size of ring is not avialable"
+                            android:textColor="@color/text_gray"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/zen_antique"
+                        android:text="@string/gross_weight_gms"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/weight_recycle_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:clipToPadding="false"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/size_calculator_btn"
+                            android:layout_width="250dp"
+                            android:layout_height="53dp"
+                            android:layout_alignParentEnd="true"
+                            android:background="@drawable/product_description_curved_button"
+                            android:text="@string/ring_size_calculator"
+                            android:textAllCaps="false" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:background="@drawable/product_description_divider_bg" />
+
+            <LinearLayout
+                android:id="@+id/stock_available_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/stock_available_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/zen_antique"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/only_1_stock_left"
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp" />
+
+                <View
+                    android:id="@+id/stock_borders"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:background="@drawable/product_description_divider_bg" />
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/styling_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dp"
+                android:paddingTop="25dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/styling_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Styling"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+
+
+                <TextView
+                    android:id="@+id/styling_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/office_wear"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/styling_title"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+
+
+                <TextView
+                    android:id="@+id/styling_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/styling_subtitle"
+                    android:layout_marginTop="5dp"
+                    android:text="Bask in the elegant opulence of this dual-toned ring, crafted in 18 karat white and rose gold, studded with diamonds. Stone Clarity: SI2."
+                    android:textSize="14sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="25dp"
+                android:layout_height="9dp"
+                android:background="@drawable/product_description_divider_bg" />
+
+
+            <RelativeLayout
+                android:id="@+id/product_des_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+
+                android:paddingStart="20dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/product_des_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/product_description"
+                    android:fontFamily="@font/zen_antique"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/down_arrow_product_des"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/all_ic_expandale_arrow" />
+
+
+                <TextView
+                    android:id="@+id/product_des_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="A detailed and reliable exposition of jewellry"
+                    android:textColor="@color/text_gray"
+                    android:fontFamily="@font/zen_antique"
+                    android:layout_below="@id/product_des_title"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/product_des_extandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/product_des_title"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/productSpecificationRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:id="@+id/price_break_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="25dp"
+                android:paddingStart="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingEnd="20dp">
+
+                <TextView
+                    android:id="@+id/price_break_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Price Breaking "
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/zen_antique"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/down_arrow_price_break"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/all_ic_expandale_arrow" />
+
+
+                <TextView
+                    android:id="@+id/price_break_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="A transparent breakdown of pricing"
+                    android:textColor="@color/text_gray"
+                    android:layout_below="@id/price_break_title"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/zen_antique"
+                    android:layout_marginTop="8dp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/price_break_extandable_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price_break_title"
+                    android:paddingBottom="20dp"
+                    android:visibility="gone">
+
+                    <!-- Price Breaking - Diamond -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="Diamond" />
+
+                    <TextView
+                        android:id="@+id/product_diamond_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_marginStart="170dp"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="₹30,850" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider16"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/product_diamond_price"
+                        android:layout_marginTop="10dp"
+                        app:dividerColor="@color/light_gray" />
+
+                    <!-- Price Breaking - Making Charges -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_below="@id/divider16"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="Making Charges" />
+
+                    <TextView
+                        android:id="@+id/product_making_charges"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_marginStart="170dp"
+                        android:layout_below="@id/divider16"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="₹2,713" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider19"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/product_making_charges"
+                        android:layout_marginTop="10dp"
+                        app:dividerColor="@color/light_gray" />
+
+                    <!-- Price Breaking - Metal -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_below="@id/divider19"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="Metal" />
+
+                    <TextView
+                        android:id="@+id/product_metal_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_marginStart="170dp"
+                        android:layout_below="@id/divider19"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="₹6,648" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider20"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/product_metal_price"
+                        android:layout_marginTop="10dp"
+                        app:dividerColor="@color/light_gray" />
+
+                    <!-- Price Breaking - Taxes -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_below="@id/divider20"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="Taxes" />
+
+                    <TextView
+                        android:id="@+id/price_taxes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_marginStart="170dp"
+                        android:layout_below="@id/divider20"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="₹396" />
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:id="@+id/divider21"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/price_taxes"
+                        android:layout_marginTop="10dp"
+                        app:dividerColor="@color/light_gray" />
+
+                    <!-- Price Breaking - Total -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_below="@id/divider21"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="Total" />
+
+                    <TextView
+                        android:id="@+id/price_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/zen_antique"
+                        android:layout_marginStart="170dp"
+                        android:layout_below="@id/divider21"
+                        android:layout_marginTop="10dp"
+                        android:textSize="15sp"
+                        android:text="₹40,580" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="9dp"
+                android:background="@drawable/product_description_divider_bg" /> <!-- Light grey line color -->
+
+
+
+        <LinearLayout
+                android:id="@+id/contactus_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical"
+                android:paddingStart="20dp"
+                android:paddingTop="25dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:fontFamily="@font/zen_antique"
+                    android:gravity="center"
+                    android:text="Still Confused what to Buy?"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/subtitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="Go on a live video call with our design experts or visit your nearest Tanishq store to get a closer look and know more about the product."
+                    android:textColor="@color/text_gray"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="45dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/talk_to_expert_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@drawable/product_description_curved_button"
+                        android:gravity="center"
+                        android:paddingStart="20dp"
+                        android:text="Talk to an Expert"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/store_location_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/product_description_filled_button"
+                        android:gravity="center"
+                        android:paddingEnd="20dp"
+                        android:text="Store Location"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="61dp"
+        android:padding="5dp"
+        android:paddingTop="20dp"
+        android:layout_marginTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="20dp"
+        android:paddingStart="20dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/fav_icon_desc" />
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/fav_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/fav_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/back_icon_desc" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="6dp"
+        app:flow_verticalAlign="bottom"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/product_description_filled_button"
+            android:text="Add to CArt"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/shopping_cart" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/try_on"
+        android:layout_width="70dp"
+        android:layout_height="80dp"
+        android:padding="5dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/try_on_btn_bg"
+        android:elevation="4dp"
+        android:translationZ="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.891"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.795">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="50dp"
+            android:src="@drawable/try_on_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/zen_antique"
+            android:text="Try On"
+            android:textSize="8sp"
+            android:textColor="@android:color/black"
+            android:textAllCaps="false"
+            android:gravity="top"
+            android:paddingTop="5dp" />
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/offwhite"
+    tools:context=".navigation.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp">
+
+                <ProgressBar
+                    android:id="@+id/progressBar8"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:background="@drawable/home_res_banners_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dotsBanner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    app:dotsColor="@color/light_gray"
+                    app:dotsCornerRadius="360dp"
+                    app:dotsSize="7dp"
+                    app:dotsSpacing="3dp"
+                    app:dotsWidthFactor="2.5"
+                    app:layout_constraintVertical_bias="0.600"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:selectedDotColor="@color/dark_golden" /> <!-- Selected dot color set to #3b3c4a -->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Categories"
+                    android:textColor="@color/brown_rust"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/seeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See all"
+                    android:textColor="@color/text_gray" />
+            </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:scrollbars="none"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="85dp"
+                                android:background="@color/transparent"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:id="@+id/kids"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:elevation="4dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/circular_categories_bg"
+                                    android:padding="10dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/kids" />
+
+                                <ImageView
+                                    android:id="@+id/men"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:elevation="4dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/circular_categories_bg"
+                                    android:padding="15dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/male1" />
+
+                                <ImageView
+                                    android:id="@+id/women"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:elevation="4dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/circular_categories_bg"
+                                    android:padding="15dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/woman1" />
+
+                                <ImageView
+                                    android:id="@+id/necklace"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:elevation="4dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/circular_categories_bg"
+                                    android:padding="15dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/necklace" />
+
+                                <ImageView
+                                    android:id="@+id/ring"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:elevation="4dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/circular_categories_bg"
+                                    android:padding="15dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_ring" />
+
+                                <ImageView
+                                    android:id="@+id/bracelet"
+                                    android:layout_width="65dp"
+                                    android:layout_height="65dp"
+                                    android:layout_marginRight="10dp"
+                                    android:elevation="4dp"
+                                    android:background="@drawable/circular_categories_bg"
+                                    android:padding="15dp"
+                                    android:scaleType="centerInside"
+                                    android:src="@drawable/ic_bracelet" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+
+                    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Recommendation"
+                    android:textColor="@color/brown_rust"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="See all"
+                    android:textColor="@color/text_gray" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarItems"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

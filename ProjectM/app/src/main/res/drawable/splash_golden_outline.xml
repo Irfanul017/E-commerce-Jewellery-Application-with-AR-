@@ -1,0 +1,22 @@
+<!-- gradient_stroke_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Outer layer for gradient stroke -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/medium_golden"
+                android:centerColor="@color/dark_golden"
+                android:endColor="@color/bright_golden"
+                android:angle="180"/>
+        </shape>
+    </item>
+
+    <!-- Inner layer for the solid background -->
+    <item android:left="10dp" android:right="10dp" android:top="10dp" android:bottom="10dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/offwhite"/>
+        </shape>
+    </item>
+
+</layer-list>

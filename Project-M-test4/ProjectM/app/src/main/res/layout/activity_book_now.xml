@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Your Jewel"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp" />
+
+    <ImageView
+        android:id="@+id/jewelryImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/neckalce5"
+        android:scaleType="fitCenter"
+        android:contentDescription="Jewelry Image" />
+
+    <TextView
+        android:id="@+id/jewelryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Jewelry: Diamond Necklace"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:paddingTop="8dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/select_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Date:"
+        android:textSize="16sp"
+        android:paddingTop="16dp" />
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="372dp"
+        android:layout_height="356dp"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/select_time_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Time:"
+        android:textSize="16sp"
+        android:paddingTop="16dp" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+      />
+
+    <EditText
+        android:id="@+id/customerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:paddingTop="16dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/contactInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your contact info"
+        android:paddingTop="8dp"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/customeraddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your Address"
+        android:paddingTop="16dp"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/bookNowButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Book Now"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

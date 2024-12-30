@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "815449214948",
+    "project_id": "krishna-jewelry-app",
+    "storage_bucket": "krishna-jewelry-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815449214948:android:97ec3686ee429aef1541f1",
+        "android_client_info": {
+          "package_name": "com.example.majorproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAQSHVrSed5EXwziX8d9PxvWJXOvJXU10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

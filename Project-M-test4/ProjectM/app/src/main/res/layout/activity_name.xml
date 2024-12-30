@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".preferences.NameActivity">
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What is your name?"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="#FF333333"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/subtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We will use this data to enhance\nyour experience."
+        android:textSize="14sp"
+        android:textColor="#FF999999"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@id/question"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="300dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/edit_text_background"
+        android:gravity="center"
+        android:hint="Enter your Name"
+        android:padding="16dp"
+        android:textColorHint="#FF333333"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subtext" />
+
+    <ImageButton
+        android:id="@+id/nextButtonName"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/circular_button"
+        android:contentDescription="Next"
+        android:src="@drawable/ic_preferences_arrow_white_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

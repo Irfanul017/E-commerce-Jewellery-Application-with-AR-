@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Major Project</string>
+    +
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="delete_account">Delete Account</string>
+    <string name="user_name">User Name</string>
+    <string name="user_profile_picture">User profile picture</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="address_icon">Address icon</string>
+    <string name="phonenumber">0000000000</string>
+    <string name="addres">Address</string>
+    <string name="abc_gmail">abc@gmail</string>
+    <string name="track_order">Track Order</string>
+    <string name="view_cart">View Cart</string>
+    <string name="address_ic">Address icon</string>
+    <string name="address">Address</string>
+    <string name="email">email</string>
+    <string name="enter_your_address">Enter your address</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="username">Username</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="edit_profile1">Edit Profile</string>
+    <string name="address1">Address</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="change_photo">Change photo</string>
+    <string name="email1">Email</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="back_icon_desc">back_button</string>
+    <string name="fav_icon_desc">fav_button</string>
+    <string name="mahavir">Mahavir</string>
+    <string name="_18k_real_gold_and_diamond_ring">18k Real Gold and Diamond Ring</string>
+    <string name="_40_580">₹40,580</string>
+    <string name="inclusive_of_all_taxes">Inclusive of all taxes</string>
+    <string name="store_location">Store Location</string>
+    <string name="size_mm_and_gross_weight_gms">Size (mm) and Gross weight (gms)</string>
+    <string name="size_in_mm_and_gr_oss_weight_in_gms">Size in mm and Gross weight in gms</string>
+    <string name="size_mm">Size (mm)</string>
+    <string name="gross_weight_gms">Gross Weight (gms)</string>
+    <string name="ring_size_calculator">Ring Size Calculator</string>
+    <string name="only_1_stock_left">Only 1 left in stock </string>
+    <string name="office_wear">Office Wear</string>
+    <string name="product_description">Product Description</string>
+    <string name="log_out">Log out</string>
+    <string name="profile">profile</string>
+    <string name="account">account</string>
+    <string name="todo">TODO</string>
+    <string name="account1">Account</string>
+    <string name="todo1">TODO</string>
+    <string name="order_history">Order History</string>
+    <string name="log_out1">Log Out</string>
+    <string name="arrow">Arrow</string>
+    <string name="track_order1">Track Order</string>
+    <string name="arrow1">Arrow</string>
+    <string name="arrow2">Arrow</string>
+    <string name="arrow3">Arrow</string>
+    <string name="w1">Arrow</string>
+
+
+    <string-array name="gen">
+        <item>Men</item>
+        <item>Women</item>
+        <item>Kids</item>
+    </string-array>
+
+    <string-array name="product_categories">
+        <item>Auspicious</item>
+        <item>Daily-Wear</item>
+        <item>Everyday</item>
+        <item>Special</item>
+    </string-array>
+</resources>
